@@ -49,10 +49,9 @@ void checkVowel() {
     }
 }
 
-int main() {
-    //findLargest();
-    //checkVowel();
- char ch;
+//function to check whether the char in the alphabet or not 
+void checkAlphabet(){
+     char ch;
     printf("Enter the character you want to check: ");
     scanf(" %c", &ch);
 
@@ -61,5 +60,73 @@ int main() {
     } else {
         printf("This character does not exist in the alphabet.\n");
     }
+}
+
+//Factorial function
+void calculateFactorial() {
+    int num;
+    unsigned int factorial;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num < 0) {
+        printf("Factorial is not defined for negative numbers.\n");
+    } else {
+        factorial = 1;
+
+        for (int i = 1; i <= num; i++) {
+            factorial *= i;
+        }
+
+        printf("Factorial of %d is %d\n", num, factorial);
+    }
+}
+
+//Calculator function
+void calculator() {
+    char operator;
+    float num1, num2, result;
+
+    printf("Enter an operator (+, -, *, /): ");
+    scanf(" %c", &operator);
+
+    printf("Enter two numbers: \n");
+    scanf("%f %f", &num1, &num2);
+
+    switch (operator) {
+        case '+':
+            result = num1 + num2;
+            printf("Result: %.2f + %.2f = %.2f\n", num1, num2, result);
+            break;
+        case '-':
+            result = num1 - num2;
+            printf("Result: %.2f - %.2f = %.2f\n", num1, num2, result);
+            break;
+        case '*':
+            result = num1 * num2;
+            printf("Result: %.2f * %.2f = %.2f\n", num1, num2, result);
+            break;
+        case '/':
+            if (num2 != 0) {
+                result = num1 / num2;
+                printf("Result: %.2f / %.2f = %.2f\n", num1, num2, result);
+            } else {
+                printf("Division by zero is not allowed.\n");
+            }
+            break;
+        default:
+            printf("Invalid operator.\n");
+            break;
+    }
+}
+
+
+
+int main() {
+    //findLargest();
+    //checkVowel();
+    //checkAlphabet();
+    //calculateFactorial();
+    calculator();
     return 0;
 }
